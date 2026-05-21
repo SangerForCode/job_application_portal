@@ -1,0 +1,21 @@
+{
+  "name": "job_application_portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Careers application frontend + backend",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "nodemon backend/src/server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.821.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
