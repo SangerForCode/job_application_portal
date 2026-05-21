@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const careersRouter = require("./routes/careers");
 const { getMissingEnv } = require("./config/s3");
 const { CSV_PATH } = require("./utils/csvLogger");
@@ -15,6 +16,11 @@ app.use(
   })
 );
 app.use(express.json());
+
+// Serve careers.html as the root
+app.get("/", (_req, res) => {
+  res.sendFile(path.join(__dirname, "../../careers.html"));
+});
 
 app.get("/health", (_req, res) => {
   const missingAwsEnv = getMissingEnv();
